@@ -9,7 +9,7 @@ https://www.python.org/downloads/
 https://code.visualstudio.com/download (โปรแกรม)\
 https://www.anaconda.com/products/individual (interpreter)
 
-3. Online\
+3. Online (เหมาะกับการเขียนบน ipad)\
 https://www.programiz.com/python-programming/online-compiler/ 
 
 # แหล่งความรู้ไม่รู้จบ
