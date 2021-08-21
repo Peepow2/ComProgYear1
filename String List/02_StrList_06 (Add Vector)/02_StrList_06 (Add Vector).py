@@ -10,7 +10,7 @@ def convert(ss):
     ss = ss[1:en]
     ss = ss.split(", ")
     return ss;
-
+   
 # Driver Code
 v1 = str(input())
 v2 = str(input())
