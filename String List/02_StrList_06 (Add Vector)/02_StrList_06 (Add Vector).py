@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: 02_StrList_06 (Add Vector)
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 def convert(ss):
     ss = ss.strip()
     en = len(ss) - 1
