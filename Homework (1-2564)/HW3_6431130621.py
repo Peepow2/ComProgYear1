@@ -108,7 +108,6 @@ print(ans)
 """
 key = "ABCDEFGHIJKLMNOP"
 plaintext = "I LOVE PYTHON101"
-
 OUTPUT = 4kZ;SR2U$;p2\<n\
 
 ABCDEFGHIJKLMNOP
