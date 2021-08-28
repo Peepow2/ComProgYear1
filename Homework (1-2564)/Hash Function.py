@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework 3 (PP's version)
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 def mpt(x): # makeprintable
     return int(((x % 90) + 32 % 90))
 # End mpt
