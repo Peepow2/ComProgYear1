@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework 3 (PP's version)
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 def mpt(x): # makeprintable
     return int(((x % 90) + 32 % 90))
 # End mpt
@@ -79,18 +85,3 @@ key = str(input().strip())
 txt = str(input().strip())
 ans = Hash(Hash(txt,key), key)
 print(ans)
-
-"""
-key = "ABCDEFGHIJKLMNOP"
-plaintext = "I LOVE PYTHON101"
-
-OUTPUT = 4kZ;SR2U$;p2\<n\
-
-ABCDEFGHIJKLMNOP
-I LOVE PYTHON101
---> 4kZ;SR2U$;p2\<n\
-
-Koraphat lumlert
-Peerawich sodsua
---> 45* !>_#^#Hk2=Pp
-"""
