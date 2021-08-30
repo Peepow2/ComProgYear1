@@ -12,23 +12,18 @@ def convert(ss):
     return ss;
 
 # Driver Code
-str1 = str(input())
-str2 = str(input())
-str1 = convert(str1)
-str2 = convert(str2)
-ans1 = []
-ans2 = []
-ans3 = []
+v1 = str(input())
+v2 = str(input())
+v1 = convert(v1)
+v2 = convert(v2)
 
-ans1.append(float(str1[0]))
-ans1.append(float(str1[1]))
-ans1.append(float(str1[2]))
-
-ans2.append(float(str2[0]))
-ans2.append(float(str2[1]))
-ans2.append(float(str2[2]))
-
-ans3.append((float(str1[0]) + float(str2[0])))
-ans3.append((float(str1[1]) + float(str2[1])))
-ans3.append((float(str1[2]) + float(str2[2])))
-print(ans1, "+", ans2, "=", ans3)
+a0 = str(float(v1[0]) + float(v2[0]))
+a1 = str(float(v1[1]) + float(v2[1]))
+a2 = str(float(v1[2]) + float(v2[2]))
+ans = str("")
+ans += "[" + str(float(v1[0])) + ", " + str(float(v1[1])) + ", " + str(float(v1[2])) + "]"
+ans += " + "
+ans += "[" + str(float(v2[0])) + ", " + str(float(v2[1])) + ", " + str(float(v2[2])) + "]"
+ans += " = "
+ans += "[" + a0 + ", " + a1 + ", " + a2 + "]"
+print(ans)
