@@ -44,7 +44,7 @@ def animate(n, x, y, dx, dy, W, H):
     plt.ylim((0, H))
 
 #-------------------------------------------
-
+```
 # HW5: Vicsek Model
 # ID: Name
 def gen_data(N, W, H):
@@ -94,5 +94,6 @@ def neighbor_average_direction(x, y, dx, dy, k, R):
   my = (v/n)/math.sqrt((u/n)**2 + (v/n)**2)
   return mx, my;
 #-------------------------------------------
+```
 main()
 
