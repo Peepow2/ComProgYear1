@@ -21,7 +21,3 @@ https://www.programiz.com/python-programming/online-compiler/
 https://www.geeksforgeeks.org/python-programming-language/ \
 https://www.w3schools.com/python/ \
 https://beta.programming.in.th/ 
-```
-print("You are so lucky")
-print("Test code")
-```
