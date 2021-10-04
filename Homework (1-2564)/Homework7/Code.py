@@ -1,15 +1,33 @@
 # HW7: Discord Examiner bot
 # พิมพ์ เลขประจำตัว ชื่อ และนามสกุลของนิสิต
 # 6431130621 พีรวิชญ์ สดสวย
-def sign_in(uid, sid, exam_info):
+def get_student_info(uid, exam_info):
     # เขียนโปรแกรมในส่วนนี้
-    # ตรวจสอบว่า uid หรือ sid มีอยู่ใน exam_info แล้วหรือไม่ 
-    # ถ้ามีอยู่แล้วก็ไม่ต้องทำอะไร แต่ถ้ายังไม่มีก็เพิ่มสมาชิก [uid, sid, [], [], 0] เข้าไปใน exam_info
-    for temp in exam_info:
-      if uid == temp[0] or sid == temp[1]:
-        return
-    exam_info += [[uid, sid, [], [], 0]]
-    return     
+    # คืนผลเป็นข้อมูลการสอบของนิสิตที่มี uid ตรงกับ uid ที่ function รับเข้ามา
+    if len(exam_info) == 0:
+        exam_info += [[uid, sid, [], [], 0]]
+    ids = []; idu = [];
+    size = len(exam_info)
+    for i in range(size):
+        idu += [exam_info[0]]
+        ids += [exam_info[1]]
+        if (uid not in idu) and (ids not in sid):
+            exam_info += [[uid, sid, [], [], 0]]
+    return exam_info
+
+def get_student_info(uid, exam_info):
+    # เขียนโปรแกรมในส่วนนี้
+    # คืนผลเป็นข้อมูลการสอบของนิสิตที่มี uid ตรงกับ uid ที่ function รับเข้ามา
+    if len(exam_info) == 0:
+        exam_info += [[uid, sid, [], [], 0]]
+    ids = []; idu = [];
+    size = len(exam_info)
+    for i in range(size):
+        idu += [exam_info[0]]
+        ids += [exam_info[1]]
+        if (uid not in idu) and (ids not in sid):
+            exam_info += [[uid, sid, [], [], 0]]
+    return exam_info
 
 def get_welcome_and_rules_msg():
     # เขียนโปรแกรมในส่วนนี้
@@ -32,37 +50,23 @@ def get_student_info(uid, exam_info):
     for temp in exam_info:
       if uid == temp[0]:
         return temp
-    return None      
+    return None
 
 def get_question(uid, exam_info, all_questions):
-    # เขียนโปรแกรมในส่วนนี้
-    # จะคืนผลเป็นคำถามจาก questions ที่ถูกชี้ด้วย qidx ถ้า ณ ตำแหน่งนั้นยังไม่มีคำถาม function นี้จะต้องไปสุ่มเลือกคำถาม
-    # เลือกมาจาก all_questions ซึ่งจะต้องเป็นคำถามที่นิสิตยังไม่ได้ตอบ
-    # นอกจากจะคืนผลแล้ว function นี้จะต้องเพิ่มคำถามที่ได้ ต่อท้าย questions ด้วย
-    # แต่หากว่าคำถามหมดแล้วก็จะคืนคำว่า end มาให้โดยไม่เปลี่ยนแปลงใดๆกับ questions
+    idx = int(random.random() * len(all_questions))
     temp = get_student_info(uid, exam_info)
-    idx = 0
-    for i in exam_info:
-        if temp == i:
-            break;
-        idx += 1
-    if idx >= len(all_questions): idx = -1
-    if len(exam_info[idx][2]) == len(all_questions):
-        return "end"
-    q = int(0); Found_question = False
-    while (q == 0 or Found_question):
-        q = (random.random() * len(all_questions)) // 1
-        Found_question = False
-        ques = str("")
-        if q < 10:
-            ques = str("Q" + "0" + str(int(q)))
+    while all_questions[idx] == temp[2]:
+        if len(temp[2]) == len(all_questions):
+            return "end"
         else:
-            ques = str("Q" + str(int(q)))
-        if ques in exam_info[idx][2]:
-            Found_question = True
-    return ques   
+            idx = int(random.random() * len(all_questions))
+        temp[2] += [all_questions[idx]]
+        return all_questions[idx]
 
 def submit_answer(uid, answer, exam_info):
-    # เขียนโปรแกรมในส่วนนี้
-    temp = get_student_info(uid, exam_info)
-    temp[3] += [answer]    
+    info += get_student_info(uid, exam_info)
+    if int(info[4]) == len(info[3]):
+        info[3] += [answer]
+    info[4] += 1
+    
+client.run(TOKEN)
