@@ -64,16 +64,5 @@ def get_question(uid, exam_info, all_questions):
 
 def submit_answer(uid, answer, exam_info):
     # เขียนโปรแกรมในส่วนนี้
-
-
-
-
-
-
-
-
-
-
-
-
-    return     
+    temp = get_student_info(uid, exam_info)
+    temp[3] += [answer]    
