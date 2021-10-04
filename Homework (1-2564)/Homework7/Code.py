@@ -28,7 +28,12 @@ def get_welcome_and_rules_msg():
 
 def get_student_info(uid, exam_info):
     # เขียนโปรแกรมในส่วนนี้
-
+    # เขียนโปรแกรมในส่วนนี้
+    # คืนผลเป็นข้อมูลการสอบของนิสิตที่มี uid ตรงกับ uid ที่ function รับเข้ามา
+    for temp in exam_info:
+      if uid == temp[0]:
+        return temp
+    return None   
 
 
 
