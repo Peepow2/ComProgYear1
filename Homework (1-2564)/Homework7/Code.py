@@ -33,23 +33,14 @@ def get_student_info(uid, exam_info):
     for temp in exam_info:
       if uid == temp[0]:
         return temp
-    return None   
-
-
-
-
-
-
-
-
-
-
-
-    return     
+    return None      
 
 def get_question(uid, exam_info, all_questions):
     # เขียนโปรแกรมในส่วนนี้
-
+    # จะคืนผลเป็นคำถามจาก questions ที่ถูกชี้ด้วย qidx ถ้า ณ ตำแหน่งนั้นยังไม่มีคำถาม function นี้จะต้องไปสุ่มเลือกคำถาม
+    # เลือกมาจาก all_questions ซึ่งจะต้องเป็นคำถามที่นิสิตยังไม่ได้ตอบฃ
+    # นอกจากจะคืนผลแล้ว function นี้จะต้องเพิ่มคำถามที่ได้ ต่อท้าย questions ด้วย
+    # แต่หากว่าคำถามหมดแล้วก็จะคืนคำว่า end มาให้โดยไม่เปลี่ยนแปลงใดๆกับ questions
 
 
 
