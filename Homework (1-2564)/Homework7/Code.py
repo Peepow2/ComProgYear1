@@ -40,18 +40,27 @@ def get_question(uid, exam_info, all_questions):
     # เลือกมาจาก all_questions ซึ่งจะต้องเป็นคำถามที่นิสิตยังไม่ได้ตอบ
     # นอกจากจะคืนผลแล้ว function นี้จะต้องเพิ่มคำถามที่ได้ ต่อท้าย questions ด้วย
     # แต่หากว่าคำถามหมดแล้วก็จะคืนคำว่า end มาให้โดยไม่เปลี่ยนแปลงใดๆกับ questions
-
-
-
-
-
-
-
-
-
-
-
-    return     
+    temp = get_student_info(uid, exam_info)
+    idx = 0
+    for i in exam_info:
+        if temp == i:
+            break;
+        idx += 1
+    if idx >= len(all_questions): idx = -1
+    if len(exam_info[idx][2]) == len(all_questions):
+        return "end"
+    q = int(0); Found_question = False
+    while (q == 0 or Found_question):
+        q = (random.random() * len(all_questions)) // 1
+        Found_question = False
+        ques = str("")
+        if q < 10:
+            ques = str("Q" + "0" + str(int(q)))
+        else:
+            ques = str("Q" + str(int(q)))
+        if ques in exam_info[idx][2]:
+            Found_question = True
+    return ques   
 
 def submit_answer(uid, answer, exam_info):
     # เขียนโปรแกรมในส่วนนี้
