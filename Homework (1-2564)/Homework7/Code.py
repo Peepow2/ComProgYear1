@@ -1,21 +1,7 @@
 # HW7: Discord Examiner bot
 # พิมพ์ เลขประจำตัว ชื่อ และนามสกุลของนิสิต
 # 6431130621 พีรวิชญ์ สดสวย
-def get_student_info(uid, exam_info):
-    # เขียนโปรแกรมในส่วนนี้
-    # คืนผลเป็นข้อมูลการสอบของนิสิตที่มี uid ตรงกับ uid ที่ function รับเข้ามา
-    if len(exam_info) == 0:
-        exam_info += [[uid, sid, [], [], 0]]
-    ids = []; idu = [];
-    size = len(exam_info)
-    for i in range(size):
-        idu += [exam_info[0]]
-        ids += [exam_info[1]]
-        if (uid not in idu) and (ids not in sid):
-            exam_info += [[uid, sid, [], [], 0]]
-    return exam_info
-
-def get_student_info(uid, exam_info):
+def sign_in(uid, sid, exam_info):
     # เขียนโปรแกรมในส่วนนี้
     # คืนผลเป็นข้อมูลการสอบของนิสิตที่มี uid ตรงกับ uid ที่ function รับเข้ามา
     if len(exam_info) == 0:
