@@ -1,0 +1,20 @@
+1
+00:00:04,000 --> 00:00:05,000
+Hello, I'm Johnny Cash.
+
+2
+00:00:05,000 --> 00:00:08,000
+[crowd cheering and applauding]
+
+3
+00:00:08,000 --> 00:00:11,000
+[outlaw country music playing] ♪♫
+
+4
+00:00:11,000 --> 00:00:12,500
+♪♪♪
+
+5
+00:00:13,000 --> 00:00:17,000
+♪ I hear the train a comin'
+It's rolling round the bend ♪
