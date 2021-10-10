@@ -69,7 +69,3 @@ def shift(INPUT, time_shift, OUTPUT):
 # ---------------------- Driver Code ---------------------- #
 # 00:00:00,000
 shift('test1.txt', -1500, 'test2_shifted.txt')
-fp = open("test1_en.srt" , 'r')
-for line in fp:
-    print(line)
-fp.close()
