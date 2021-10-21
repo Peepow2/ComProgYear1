@@ -70,3 +70,4 @@ def Entropy_with_feature(S, conditions, feature_name):
         SUM += (P_each[i] * P[i])
     return SUM
 #---------------------------------------
+# Problem: https://colab.research.google.com/drive/1E_3xSA2dkQptOJodzA4n1d1YOcu_69w3#scrollTo=JWVan-u1N58t
