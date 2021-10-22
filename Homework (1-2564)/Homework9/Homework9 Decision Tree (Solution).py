@@ -8,18 +8,18 @@ import math
 
 def calculate(x):
     if x == 0: return 0
-    return x * math.log(x, 2) * (-1)
+    return abs(x * math.log(x, 2))
 #---------------------------------------
 
 def SUBSET(dict1, dict2):
-    return dict2.items() <= dict1.items()
+    return dict1.items() <= dict2.items()
 #---------------------------------------
 
 def get_rows(S, conditions):
     if conditions == {}: return S
     rec = []
     for temp, target in S:
-        if SUBSET(temp, conditions):
+        if SUBSET(conditions, temp):
             rec += [[temp, target]]      
     return rec
 #---------------------------------------
