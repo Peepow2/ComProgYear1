@@ -10,3 +10,4 @@ def SUBSET(dict1, dict2):
 A = {'1' : 'PP', '2': 'is', '3': 'very', '4': 'handsome'}
 B = {'1' : 'PP', '2': 'is'}
 print(SUBSET(B, A)) # B เป็นสับเซตของ A ไหม
+# https://pastebin.com/5fYqw2Eh
