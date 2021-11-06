@@ -19,12 +19,12 @@ B = {3, 4, 5, 6, 7} \
 print("A union B") \
 print(A.union(B)) \
 print(A | B) \
-print() \
+print() 
 
 print("A intersection B") \
 print(A.intersection(B)) \
 print(A & B) \
-print() \
+print() 
 
 print("A - B") \
 print(A.difference(B)) \
@@ -46,7 +46,7 @@ s = set(d) --> s = set(); for e in d: s.add(e) \
 s = set([1, 2, 3, 1]);     print(s) \
 s = set((1, 2, 3, 1));     print(s) \
 s = set("Mono");           print(s) \
-print() \
+print() 
 
 # Create list
 L = list(d) --> L = list(); for e in d: L.append(e) \
@@ -55,7 +55,7 @@ L = list((1 ,2, 3, 1));    print(L) \
 L = list("Mono");          print(L) \
 L = list({"A":2, "B":2});  print(L) \
 L = list({1, 2, 3});       print(L) \
-print() \
+print() 
  
 # Create tuple
 T = tuple(d)  \
@@ -65,7 +65,7 @@ T = tuple("Mono");         print(T) \
 T = tuple({"A":2, "B":2}); print(T) \
 T = tuple({1, 2, 3});      print(T) \
 T = tuple(range(1, 7, 2)); print(T) \
-print() \
+print() 
  
 x.sort vs sorted(x) \
 x.sort ใช้ได้เมื่อ x เป็น list เท่านั้น \
