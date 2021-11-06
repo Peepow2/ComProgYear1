@@ -1,6 +1,6 @@
 List = [11, 22, 33,] \
 Tuple = (11, 22, 33,) \
-print(List, Tuple) \
+print(List, Tuple) 
 
 # ตัวอย่าง operation แก้ไขไม่ได้ แต่สร้างใหม่ได้
 t = (11, 22, 33) \
@@ -8,7 +8,7 @@ print(len(t)) \
 print(t[0], t[-1]) \
 print(t[:2]) \
 print(33 in t) \
-print(t.index(33)) \
+print(t.index(33)) 
 
 
 # set เป็นที่เก็บข้อมูลที่ไม่ซ้ำกัน และไม่มีลำดับ (เหมือนคณิตศาสตร์)
@@ -29,7 +29,7 @@ print() \
 print("A - B") \
 print(A.difference(B)) \
 print(A - B) \
-print() \
+print() 
 
 # More Operation
 s.add(value) --> add value \
@@ -56,7 +56,7 @@ L = list("Mono");          print(L) \
 L = list({"A":2, "B":2});  print(L) \
 L = list({1, 2, 3});       print(L) \
 print() \
- \
+ 
 # Create tuple
 T = tuple(d)  \
 T = tuple([1, 2, 3, 1]);   print(T) \
@@ -66,7 +66,7 @@ T = tuple({"A":2, "B":2}); print(T) \
 T = tuple({1, 2, 3});      print(T) \
 T = tuple(range(1, 7, 2)); print(T) \
 print() \
- \
+ 
 x.sort vs sorted(x) \
 x.sort ใช้ได้เมื่อ x เป็น list เท่านั้น \
-sorted(x) ใช้ได้หมด \
+sorted(x) ใช้ได้หมด 
