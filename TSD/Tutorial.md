@@ -67,6 +67,6 @@ T = tuple({1, 2, 3});      print(T) \
 T = tuple(range(1, 7, 2)); print(T) \
 print() 
  
-x.sort vs sorted(x) \
+# x.sort vs sorted(x) 
 x.sort ใช้ได้เมื่อ x เป็น list เท่านั้น \
 sorted(x) ใช้ได้หมด 
