@@ -79,8 +79,7 @@ def find_first(block):
 # (4)
 # Sorting block in to chain
 def sorting_block(block_list):
-    if block_list == []:
-        return []
+    if block_list == []: return []
     block = copy_list(block_list)
     ret = []
     first = find_first(block)
