@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework10 Super Powerful and Justify Blockchain
+ # Code: Peerawich Sodsuay 
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 # (1)
 # Sorting Transaction by timestamp
 def sorting_transaction(transaction_list):
