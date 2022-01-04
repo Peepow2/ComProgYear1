@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework12 Covid19
+ # Code: Peerawich Sodsuay 
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 import numpy as np
 
 def find_max_min_on_date(provinces, dates, data, date):
