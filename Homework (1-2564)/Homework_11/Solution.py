@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework11 API
+ # Code: Peerawich Sodsuay 
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 from datetime import datetime,timedelta # ไม่อนุญาตให้ import library อื่นนอกเหนือจากนี้แล้ว
 import math 
 
