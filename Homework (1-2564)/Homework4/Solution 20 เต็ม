@@ -1,0 +1,131 @@
+def run20(p):
+    print(p)
+    pin = list(p) # copy input list
+    pout = runrule(pin) # produce output list
+    print(pout)
+    
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+    pin = list(pout); pout = runrule(pin); print(pout)
+# End run20
+
+def runrule(p):
+    pp = 20*[0] # initialise output
+    pp[2] = rule1(p, 2)
+    pp[3] = rule1(p, 3)
+    pp[4] = rule1(p, 4)
+    pp[5] = rule1(p, 5)
+    pp[6] = rule1(p, 6)
+    pp[7] = rule1(p, 7)
+    pp[8] = rule1(p, 8)
+    pp[9] = rule1(p, 9)
+    pp[10] = rule1(p, 10)
+    pp[11] = rule1(p, 11)
+    pp[12] = rule1(p, 12)
+    pp[13] = rule1(p, 13)
+    pp[14] = rule1(p, 14)
+    pp[15] = rule1(p, 15)
+    pp[16] = rule1(p, 16)
+    pp[17] = rule1(p, 17)
+    return pp
+# End runrule
+
+def rule1(p, i):
+    # teacher rule 10101, 01000
+    teacher = [[1, 0, 1, 0, 1],[0, 1, 0, 0, 0]]
+    if p[i-2:i+3] in teacher:
+        return 1
+    return 0
+# End rule1
+
+# print a list without space
+def prettyprint(p):
+    s = "".join([str(e) for e in p])
+    print(s)
+# End prettyprint
+
+def getinput():
+    p = input().strip()
+    p3 = [int(x) for x in p]
+    return p3
+# End getinput
+
+def main():
+    # p0 = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1]
+    # 01010101010101010101
+    p0 = getinput()
+    run20(p0)
+    mycellular() 
+# End main
+
+def RunMyRule(p, i):
+    # 10101 01100
+    myrule = [[1, 1, 1, 1, 1], [0, 0, 0, 0, 0]] 
+    if p[i-2:i+3] in myrule:
+        return 1
+    return 0
+# End MyRunRule
+
+def rule2(p):
+    pp = 20*[0] # initialise output
+    pp[2] = RunMyRule(p, 2)
+    pp[3] = RunMyRule(p, 3)
+    pp[4] = RunMyRule(p, 4)
+    pp[5] = RunMyRule(p, 5)
+    pp[6] = RunMyRule(p, 6)
+    pp[7] = RunMyRule(p, 7)
+    pp[8] = RunMyRule(p, 8)
+    pp[9] = RunMyRule(p, 9)
+    pp[10] = RunMyRule(p, 10)
+    pp[11] = RunMyRule(p, 11)
+    pp[12] = RunMyRule(p, 12)
+    pp[13] = RunMyRule(p, 13)
+    pp[14] = RunMyRule(p, 14)
+    pp[15] = RunMyRule(p, 15)
+    pp[16] = RunMyRule(p, 16)
+    pp[17] = RunMyRule(p, 17)
+    return pp
+# End rule2
+
+def mycellular():
+    p1 = [1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0]
+    prettyprint(p1) # 1
+    
+    pin = list(p1); pout = rule2(pin); prettyprint(pout) # 2
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 3
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 4
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 5
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 6
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 7
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 8
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 9
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 10
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 11
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 12
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 13
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 14
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 15
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 16
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 17
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 18
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 19
+    pin = list(pout); pout = rule2(pin); prettyprint(pout) # 20
+# End mycellular
+
+# Driver Code
+main()
