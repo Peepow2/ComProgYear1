@@ -24,5 +24,3 @@ if(D >= 20 and M == 1) or (D <= 18 and M == 2):
     print("Aquarius")
 if(D >= 19 and M == 2) or (D <= 20 and M == 3):
     print("Pisces")
-    
-  
