@@ -5,15 +5,11 @@
  # If you do it, your score will be cancel immediately.
 """
 import math as m
-str1 = input().strip()
-str1 = str1.split(",")
-a = str(str1[0]); b = str(str1[1]); c = str(str1[2]);
+str1 = input().strip().split(",")
+a, b, c = str1[0], str1[1], str1[2];
 leb = len(b); lec = len(c);
-num1 = int(a + b);
-num2 = int(a + b + c);
-fac = num2 - num1;
+fac = int(a + b + c) - int(a + b);
 dev = 10**(leb + lec) - 10**(leb)
 GCD = m.gcd(fac, dev)
-fac //= GCD; dev //= GCD; 
-print(fac,"/",dev)
+print(fac//GCD,"/",dev//GCD)
 
