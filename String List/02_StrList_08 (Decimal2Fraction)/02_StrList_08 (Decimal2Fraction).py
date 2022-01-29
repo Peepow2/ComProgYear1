@@ -8,4 +8,5 @@ import math as m
 a, b, c = input().strip().split(",")
 fac = int(a + b + c) - int(a + b);
 dev = 10**(len(b + c)) - 10**(len(b))
-print(fac // m.gcd(fac, dev), "/", dev // m.gcd(fac, dev))
+GCD = m.gcd(fac, dev)
+print(fac//GCD, "/", dev//GCD)
