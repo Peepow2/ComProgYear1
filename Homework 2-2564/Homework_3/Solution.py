@@ -20,7 +20,7 @@ def display_exam_seating(seating_sequence):
     line4 = [""] + seating_sequence[3 * seat:4 * seat] + [""]
 
     ll = "-" * len("|".join(line1))
-    space = " " * int((len(ll) - 10) / 2)
+    space = " " * int((len(ll) - 11) / 2)
     print(ll)
     print("|" + space + "Exam Room" + space + "|" + '\n' + ll)
     print("|".join(line1) + '\n' + ll)
