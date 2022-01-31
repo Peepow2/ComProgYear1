@@ -1,3 +1,10 @@
+""" Python Language
+ # Task: Homework2 sinx
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
+
 import math 
 
 def term_k(x,k):
