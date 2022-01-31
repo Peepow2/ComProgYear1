@@ -1,3 +1,10 @@
+""" Python Language
+ # Task: Homework3 Exam_Seating
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
+
 def generate_seating_sequence(group1,group2,seats_p_row):
     No_seat = 4 * seats_p_row
     seating_sequence = [" -"] * No_seat
