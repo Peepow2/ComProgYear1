@@ -19,20 +19,20 @@ def group_reverse_order(group):
     return reverse_group 
 #------------------------------------------------------------#    
 def display_exam_seating(seating_sequence):
-    seat = int(len(seating_sequence) / 4)
-    line1 = [""] + seating_sequence[0 * seat:1 * seat] + [""]
-    line2 = [""] + seating_sequence[1 * seat:2 * seat] + [""]
-    line3 = [""] + seating_sequence[2 * seat:3 * seat] + [""]
-    line4 = [""] + seating_sequence[3 * seat:4 * seat] + [""]
+    s = len(seating_sequence) // 4
+    line1 = seating_sequence[0*s:1*s]
+    line2 = seating_sequence[1*s:2*s] 
+    line3 = seating_sequence[2*s:3*s] 
+    line4 = seating_sequence[3*s:4*s]
 
-    ll = "-" * len("|".join(line1))
-    space = " " * int((len(ll) - 11) / 2)
-    print(ll)
-    print("|" + space + "Exam Room" + space + "|" + '\n' + ll)
-    print("|".join(line1) + '\n' + ll)
-    print("|".join(line2) + '\n' + ll)
-    print("|".join(line3) + '\n' + ll)
-    print("|".join(line4) + '\n' + ll)
+    hypen = "-" * (3*s + 1)
+    space = " " * ((3*s - 10) // 2)
+    print(hypen)
+    print("|" + space + "Exam Room" + space + "|"); print(hypen)
+    print("|" + "|".join(line1) + "|"); print(hypen)
+    print("|" + "|".join(line2) + "|"); print(hypen)
+    print("|" + "|".join(line3) + "|"); print(hypen)
+    print("|" + "|".join(line4) + "|"); print(hypen)    
     return 
 #------------------------------------------------------------#    
 def main():
