@@ -36,7 +36,6 @@ def display_exam_seating(seating_sequence):
     return 
 #------------------------------------------------------------#    
 def main():
-    
     group1 = input().split(",")
     group2 = input().split(",")
     seats_p_row = int(input())
@@ -56,5 +55,5 @@ def main():
     
     seating_sequence = generate_seating_sequence(group1,group2,seats_p_row)
     display_exam_seating(seating_sequence)
-
+   
 main()
