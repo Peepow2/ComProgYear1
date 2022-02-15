@@ -5,7 +5,7 @@ def least_pn_having(x):
         p = [1]
         for i in range(n):
             p += [next_partition_number(p, posnums)]
-        cnt = 0; pos = 0; PN = str(p[n])
+        cnt = 0; PN = str(p[n])
         pos = PN.find(X[0], 0)
         while pos != -1: 
             cnt += 1
