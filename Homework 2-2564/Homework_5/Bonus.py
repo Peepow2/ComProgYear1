@@ -3,7 +3,7 @@ def least_pn_having(x):
     while True:
         posnums = position_numbers(n)
         p = [1]
-        for i in range(1, n + 1):
+        for i in range(n):
             p += [next_partition_number(p, posnums)]
         cnt = 0; pos = 0; PN = str(p[n])
         pos = PN.find(X[cnt])
