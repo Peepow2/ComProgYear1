@@ -14,12 +14,10 @@ def Longest_Common_Subsequence(str1, str2):
 # --------------------------------------------------- #
 # Bonus HW5
 def least_pn_having(x):
-    x = str(x); n = 1; L =len(x)
+    x = str(x); n = 1; L = len(x)
     while True:
-        posnums = position_numbers(n)
-        p = [1]
-        for i in range(n):
-            p += [next_partition_number(p, posnums)]
+        posnums = position_numbers(n); p = [1]
+        for i in range(n): p += [next_partition_number(p, posnums)]
         if Longest_Common_Subsequence(str(p[n]), x) == L: return p[n]
         n += 1
 # --------------------------------------------------- #
