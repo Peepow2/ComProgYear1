@@ -48,5 +48,10 @@ def least_pn_having(x):
     while True:
         posnums.append(next_position_number(posnums))
         p.append(next_partition_number(p, posnums))
-        if Longest_Common_Subsequence(str(p[-1]), x) == L: return p[-1]
+        PN = str(p[-1]); cnt = 0
+        pos = PN.find(x[0], 0)
+        while pos != -1:
+            cnt += 1
+            if cnt == L: return p[-1]
+            pos = PN.find(x[cnt], pos + 1)
 # --------------------------------------------------------- #
