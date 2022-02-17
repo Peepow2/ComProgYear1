@@ -12,7 +12,7 @@ def next_partition_number(p, posnums):
         step += 0.5; idx += 1
     return ans
 # --------------------------------------------------------- #
-def least_pn_having2(x):
+def least_pn_having(x):
     x = str(x); L = len(x); 
     posnums = [1]; p = [1];
     while True:
