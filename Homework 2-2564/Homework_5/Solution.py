@@ -36,19 +36,17 @@ def main(n, show_rhs):
     out += str(p[n])
     print(out)
 # --------------------------------------------------- #
+def next_position_number(posnums):
+    L = len(posnums)
+    r = (L // 2) + 1; s = (L + 1) % 2 
+    return r * (3 * r + (-1) ** s) // 2
+# --------------------------------------------------- #
 # Bonus HW5
 def least_pn_having(x):
-    X = str(x); n = 1; 
+    x = str(x); L = len(x); 
+    posnums = [1]; p = [1];
     while True:
-        posnums = position_numbers(n)
-        p = [1]
-        for i in range(1, n + 1):
-            p += [next_partition_number(p, posnums)]
-        cnt = 0; PN = str(p[n])
-        pos = PN.find(X[0], 0)
-        while pos != -1: 
-            cnt += 1
-            if cnt == len(X): return p[n]
-            if cnt < len(X):  pos = PN.find(X[cnt], pos + 1)
-        n += 1
+        posnums.append(next_position_number(posnums))
+        p.append(next_partition_number(p, posnums))
+        if Longest_Common_Subsequence(str(p[-1]), x) == L: return p[-1]
 # --------------------------------------------------------- #
