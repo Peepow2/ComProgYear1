@@ -25,7 +25,11 @@ def get_nutrient(nutrient, food_name):
     L = match_foods(nutrient, food_name)
     if L == []: return []
 
-    Nu = id2food(nutrient, L)
+    Nu = list()
+    for i in nutrient:
+        for j in L:
+            if j == i[0]: Nu += [i];
+            
     div = [0] * (len(nutrient[0]) - 2)
     OUT = ['NA'] * (len(nutrient[0]) - 2)
     for temp in Nu:
@@ -47,28 +51,23 @@ def summarize_daily_intake(nutrient, intakes):
         if idx == -1: Match += [[t[0]]]
         M = match_foods(nutrient, t[1])
         if M == []: day_false += [t[0]]
-        Match[idx] += id2food(nutrient, M)
+        else:
+            Match[idx] += [id2food(nutrient, M)[1]]
 
     for t in Match:
         idx = search_id(t[0], L)
         if idx == -1: L += [[t[0]] + ['NA'] * 6 + [True]]
-        for w in t[1::]:
-            w = w[2::]
-            for r in range(len(w)):
-                if w[r] != 'NA':
-                    if L[idx][r+1] == 'NA': L[idx][r+1] = 0
-                    L[idx][r+1] += float(w[r])
+        for w in t[1::]: 
+            g_nu = get_nutrient(nutrient, w)
+            for x in range(len(g_nu)):
+                if g_nu[x] != 'NA':
+                    if L[idx][x+1] == 'NA': L[idx][x+1] = 0
+                    L[idx][x+1] += g_nu[x]
+
     for d in day_false:
         idx = search_id(d, L)
         L[idx][-1] = False
     return sorted(L)[::-1]
-# ---------------------------------------------------------------- #
-def id2food(nutrient, L):
-    Nu = list()
-    for i in nutrient:
-        for j in L:
-            if j == i[0]: Nu += [i];
-    return Nu
 # ---------------------------------------------------------------- #
 def search_id(s, L):
     for i in range(len(L)):
