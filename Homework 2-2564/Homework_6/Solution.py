@@ -29,7 +29,7 @@ def get_nutrient(nutrient, food_name):
     for i in nutrient:
         for j in L:
             if j == i[0]: Nu += [i];
-            
+
     div = [0] * (len(nutrient[0]) - 2)
     OUT = ['NA'] * (len(nutrient[0]) - 2)
     for temp in Nu:
@@ -45,37 +45,27 @@ def get_nutrient(nutrient, food_name):
     return OUT
 # ---------------------------------------------------------------- #
 def summarize_daily_intake(nutrient, intakes):
-    L = list(); Match = list(); day_false = [] 
+    L = list(); Timeline = list(); day_false = []; Energy = list()
     for t in intakes:
-        idx = search_id(t[0], Match)
-        if idx == -1: Match += [[t[0]]]
-        M = match_foods(nutrient, t[1])
-        if M == []: day_false += [t[0]]
-        else:
-            Match[idx] += id2food(nutrient, M)
+        idx = search_id(t[0], Timeline)
+        if idx == -1: Timeline += [[t[0]]]
+        if match_foods(nutrient, t[1]) == []: day_false += [t[0]]
+        Timeline[idx] += [t[1]]
     
-    for t in Match:
-        idx = search_id(t[0], L)
-        if idx == -1: L += [[t[0]] + ['NA'] * 6 + [True]]
-        for w in t[1::]: 
-            g_nu = get_nutrient(nutrient, w)
+    for t in Timeline:
+        idx = search_id(t[0], Energy)
+        if idx == -1: Energy += [[t[0]] + ['NA'] * 6 + [True]]
+        for food_name in t[1::]:
+            g_nu = get_nutrient(nutrient, food_name)
             for x in range(len(g_nu)):
                 if g_nu[x] != 'NA':
-                    if L[idx][x+1] == 'NA': L[idx][x+1] = 0
-                    L[idx][x+1] += g_nu[x]
-
+                    if Energy[idx][x+1] == 'NA': Energy[idx][x+1] = 0
+                    Energy[idx][x+1] += g_nu[x]
+                    
     for d in day_false:
-        idx = search_id(d, L)
-        L[idx][-1] = False
-    return sorted(L)[::-1]
-# ---------------------------------------------------------------- #
-def id2food(Nu, L):
-    Nu = list()
-    for i in nutrient:
-        for j in L:
-            if i[0] == j: 
-                Nu.append(i[1])
-    return Nu
+        idx = search_id(d, Energy)
+        Energy[idx][-1] = False
+    return sorted(Energy)[::-1]
 # ---------------------------------------------------------------- #
 def search_id(s, L):
     for i in range(len(L)):
