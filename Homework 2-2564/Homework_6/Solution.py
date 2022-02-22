@@ -52,8 +52,8 @@ def summarize_daily_intake(nutrient, intakes):
         M = match_foods(nutrient, t[1])
         if M == []: day_false += [t[0]]
         else:
-            Match[idx] += [id2food(nutrient, M)[1]]
-
+            Match[idx] += id2food(nutrient, M)
+    
     for t in Match:
         idx = search_id(t[0], L)
         if idx == -1: L += [[t[0]] + ['NA'] * 6 + [True]]
@@ -68,6 +68,14 @@ def summarize_daily_intake(nutrient, intakes):
         idx = search_id(d, L)
         L[idx][-1] = False
     return sorted(L)[::-1]
+# ---------------------------------------------------------------- #
+def id2food(Nu, L):
+    Nu = list()
+    for i in nutrient:
+        for j in L:
+            if i[0] == j: 
+                Nu.append(i[1])
+    return Nu
 # ---------------------------------------------------------------- #
 def search_id(s, L):
     for i in range(len(L)):
