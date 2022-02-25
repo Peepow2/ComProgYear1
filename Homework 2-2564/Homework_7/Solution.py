@@ -39,8 +39,7 @@ def get_subsets2(list_a, list_b):
             prev = True
             
         if prev == True and not is_subset(list_a[idxA], list_b[idxB]):
-            idxB += 1
-            idxA -= 1
+            idxB += 1; idxA -= 1
             prev = False
         idxA += 1
                   
