@@ -6,10 +6,7 @@ def f2():
     return [int(input()) for i in range(n)]
 
 def f3(x, e):
-    List = list()
-    for i in x:
-        if i % e == 0: List.append(i)
-    return List
+    return [i for i in x if i % e == 0]
 
 def f4():
     L = f2()
