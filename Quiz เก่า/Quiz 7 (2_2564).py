@@ -1,13 +1,16 @@
-store = list()  
-inp = input().strip()
-while inp != 'q':
-    inp = inp.split()
-    store += [inp[0], float(inp[1])]
-    inp = input().strip()
+def f1(d):
+    return sum(d)
 
-buys = input().strip().split()
-price = 0
-for b in buys:
-    idx = store.index(b)
-    price += store[idx + 1]
-print("total payment", price)
+def f2():
+    n = int(input())
+    return [int(input()) for i in range(n)]
+
+def f3(x, e):
+    List = list()
+    for i in x:
+        if i % e == 0: List.append(i)
+    return List
+
+def f4():
+    L = f2()
+    print(f1(f3(L, 2)) - f1(f3(L, 3)) - f1(f3(L, 5)))
