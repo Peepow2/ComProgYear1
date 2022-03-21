@@ -1,16 +1,16 @@
 # HW8_StrFile (ไม่ลบหรือแก้ไขบรรทัดนี้ หรือเพิ่มอะไรก่อนบรรทัดนี้ โดยเด็ดขาด)
 
-def read_csv(filename):
+def read_csv(filename, column_name):
     fin = open(filename, 'r')
     data = fin.readlines()
+    first_line = data[0].strip().split(','); idx = -1
+    if column_name in first_line:  idx = first_line.index(column_name)
     fin.close()
-    return data
+    return data, idx
 # ------------------------------------------------------------------------------- #
 def get_unique_value(filename,column_name):
-    data = read_csv(filename)
-    if column_name in data[0].strip().split(','):
-      idx = data[0].strip().split(',').index(column_name)
-    else: return []
+    data, idx = read_csv(filename, column_name)
+    if idx == -1: return []
 
     OUT = list()
     for line in data[1:]:
@@ -28,10 +28,8 @@ def count_announce_date_province(filename,date,province):
 
 def count_value_in_column(filename,column_name,value):
     cnt = 0
-    data = read_csv(filename)
-    if column_name in data[0].strip().split(','):
-      idx = data[0].strip().split(',').index(column_name)
-    else: return -1
+    data, idx = read_csv(filename, column_name)
+    if idx == -1: return -1
     
     for line in data[1:]:
        line = line.strip().split(',')
@@ -39,10 +37,8 @@ def count_value_in_column(filename,column_name,value):
     return cnt
 
 def create_file_by_value_in_column(filename,fileout,column_name,value):
-    data = read_csv(filename)
-    if column_name in data[0].strip().split(','):
-      idx = data[0].strip().split(',').index(column_name)
-    else: return 
+    data, idx = read_csv(filename, column_name)
+    if idx == -1: return 
 
     fout = open(fileout, 'w')
     fout.write(data[0])
@@ -55,7 +51,7 @@ def create_file_by_value_in_column(filename,fileout,column_name,value):
 
 def count_by_date(filename,province):
     OUT = list()
-    data = read_csv(filename)
+    data, idx = read_csv(filename, ' ')
     prev = "xx"
 
     for line in data[1:]:
