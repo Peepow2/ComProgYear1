@@ -4,7 +4,7 @@ def create_summary_file(filename,fileout):
     แต่ละบรรทัดหลังจากนั้นเก็บจำนวนผู้ติดเชื้อของแต่ละจังหวัด ตาม province_of_isolation เรียงจังหวัดตามพจนานุกรม
     โดยในแต่ละจังหวัดเป็นจำนวนผู้ติดเชื้อที่รายงานในแต่ละวันตามข้อมูลใน announce_date (เรียงวันตามที่อ่านมาจากไฟล์)
     '''
-    # เก็บข้อมูลในรูป DATA[จังหวัด][วันที่] = จำนวน
+    # เก็บข้อมูลในรูป DATA[วันที่][จังหวัด] = จำนวนเคส
     date = get_unique_value(filename, 'announce_date')
     province = sorted(get_unique_value(filename, 'province_of_isolation'))
     data = read_csv(filename)
