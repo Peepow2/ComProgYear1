@@ -69,8 +69,8 @@ def create_file_by_value_in_column(filename,fileout,column_name,value):
     ในกรณีที่ไม่มีชื่อคอลัมน์ตาม column_name ให้ออกจากฟังก์ชันโดยไม่ต้องทำอะไร 
     ในไฟล์ที่สร้างขึ้นใหม่ จะต้องมีบรรทัดที่เป็นชื่อคอลัมน์เหมือนต้นฉบับ ตามด้วยข้อมูลตามกำหนด
     ''' 
-    data= read_csv(filename)
-    idx = search_idx(data[0].strip().split(','), column_name)
+    data = read_csv(filename)
+    idx  = search_idx(data[0].strip().split(','), column_name)
     if idx == -1: return 
 
     fout = open(fileout, 'w', encoding = 'utf-8')
