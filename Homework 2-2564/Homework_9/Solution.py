@@ -23,7 +23,7 @@ def get_item_count(sending_addresses):
 def calculate_fee(senders, receivers, address, discount, dispatch_center_addr):
     out = dict(); dis = dict()
     for s in senders:
-        if s not in dis: dis[s] = 0
+        dis[s] = dis.get(s, int(0))
         if s in receivers:
             for r in receivers[s]:
                 dis[s] += get_distance(dispatch_center_addr, address[r])
