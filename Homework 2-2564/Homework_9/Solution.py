@@ -4,10 +4,10 @@ def get_distance(address1, address2):
     return abs(address1-address2)
 
 def expenses(dist, discount):
-    mx = -999
-    if dist == 0: return 0
-    for k in discount: if mx <= k <= dist: mx = k
-    return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount[mx], 0)
+    mx = -9999
+    for k in discount:
+        if mx <= k <= dist: mx = k
+    return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount.get(mx, int(0)), 0)
 # ---------------------------------------------------------------------------------------------- #
 def get_sending_addresses(senders, receivers, address):
   return [str(address[r]) for s in senders if receivers.get(s, 'empty') != 'empty' for r in receivers[s]]
