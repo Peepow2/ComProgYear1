@@ -3,8 +3,6 @@ def find_best_location(senders, receivers, address, discount , dispatch_centers)
     for dc in dispatch_centers:
         price[dc] = calculate_fee(senders, receivers, address, discount, dispatch_centers[dc])
     for dc in price:
-        location[dc] = 0
-        for p in price[dc]:
-            location[dc] += price[dc][p]
+        location[dc] = sum([int(price[dc][e]) for e in price[dc]])
     for i in location: L.append([location[i], i])
     return min(L)[::-1]
