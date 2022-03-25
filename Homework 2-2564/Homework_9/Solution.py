@@ -10,7 +10,7 @@ def expenses(dist, discount):
     return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount.get(mx, int(0)), 0)
 # ---------------------------------------------------------------------------------------------- #
 def get_sending_addresses(senders, receivers, address):
-  return [str(address[r]) for s in senders if receivers.get(s, 'empty') != 'empty' for r in receivers[s]]
+    return [str(address[r]) for s in senders if receivers.get(s, 'empty') != 'empty' for r in receivers[s]]
 
 def get_item_count(sending_addresses):
     OUT = dict()
@@ -32,7 +32,7 @@ def calculate_fee(senders, receivers, address, discount, dispatch_center_addr):
 def find_best_location(senders, receivers, address, discount , dispatch_centers):
     price = dict(); location = dict(); L = list()
     for dc in dispatch_centers:
-        price[dc] = calculate_fee(senders, receivers, address, discount, dispatch_centers[dc])
+        location[dc] = calculate_fee(senders, receivers, address, discount, dispatch_centers[dc])
     for dc in price:
-        location[dc] = sum([int(price[dc][e]) for e in price[dc]])
-    return min([[location[i], i] for i in location])[::-1]
+        price[dc] = sum([int(location[dc][e]) for e in location[dc]])
+    return min([[price[i], i] for i in price])[::-1]
