@@ -6,8 +6,7 @@ def get_distance(address1, address2):
 def expenses(dist, discount):
     mx = -999
     if dist == 0: return 0
-    for k in discount:
-        if mx <= k and k <= dist: mx = k
+    for k in discount: if mx <= k <= dist: mx = k
     return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount[mx], 0)
 # ---------------------------------------------------------------------------------------------- #
 def get_sending_addresses(senders, receivers, address):
