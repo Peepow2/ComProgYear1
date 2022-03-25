@@ -15,9 +15,7 @@ def get_sending_addresses(senders, receivers, address):
 def get_item_count(sending_addresses):
     OUT = dict()
     for sa in sending_addresses:
-        if OUT.get(sa, 'empty') != 'empty':
-            OUT[sa] = 0
-        OUT[sa] += 1
+        OUT[sa] = OUT.get(sa, 0) + 1
     return OUT
   
 def calculate_fee(senders, receivers, address, discount, dispatch_center_addr):
