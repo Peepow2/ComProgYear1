@@ -7,10 +7,10 @@ def expenses(dist, discount):
     mx = -9999
     for k in discount:
         if mx <= k <= dist: mx = k
-    return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount.get(mx, int(0)), 0)
+    return max(min(dist, 10) * 2 + max(dist - 10, 0) * 3 - discount.get(mx, 0), 0)
 # ---------------------------------------------------------------------------------------------- #
 def get_sending_addresses(senders, receivers, address):
-    return [str(address[r]) for s in senders if receivers.get(s, 'empty') != 'empty' for r in receivers[s]]
+    return [str(address[r]) for s in senders if receivers.get(s) != None for r in receivers[s]]
 
 def get_item_count(sending_addresses):
     OUT = dict()
