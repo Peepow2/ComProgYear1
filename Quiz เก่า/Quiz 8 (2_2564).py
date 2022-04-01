@@ -1,6 +1,5 @@
 def get_secret(t):
-    t = t.split(t[0])[2::2]
-    return ''.join(t)
+    return ''.join(t.split(t[0])[2::2])
   
 def print_secret(filename):
     for line in open(filename, "r"): print(get_secret(line))
