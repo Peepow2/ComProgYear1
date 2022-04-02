@@ -15,7 +15,5 @@ def get_all_words(board):
             if write: check[-1] += board[j][i]
             
     for c in sorted(check):
-        if len(c) > 1:
-            if is_valid(c): words[0].append(c)
-            else: words[1].append(c)
+        if len(c) > 1: words[(is_valid(c) + 1) % 2].append(c)
     return words
