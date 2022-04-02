@@ -5,14 +5,14 @@ def get_all_words(board):
         write = False
         for j in range(15):
             if write == False: check.append("")
-            write = (board[i][j] != '')
+            write = board[i][j] != ''
             if write: check[-1] += board[i][j]
             
     for j in range(15):
         write = False
         for i in range(15):
             if write == False: check.append("")
-            write = (board[i][j] != '')
+            write = board[i][j] != ''
             if write: check[-1] += board[i][j]
             
     for c in sorted(check):
