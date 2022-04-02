@@ -1,6 +1,6 @@
 def get_play(board, new_board):
     x = y = d = 0
-    v = h = -1
+    v = -1
     s = ''
     for i in range(15):
         for j in range(15):   
