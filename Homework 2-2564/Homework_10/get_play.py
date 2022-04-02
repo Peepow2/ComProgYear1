@@ -8,6 +8,6 @@ def get_play(board, new_board):
             s += new_board[i][j]
             v = i; h = j;
             if x == 0 and y == 0: x = j; y = i
-    if x < h or len(s) == 1: d = 0
-    if y < v: d = 1
+
+    if y < v and len(s) > 1: d = 1
     return [y, x, d, s]
