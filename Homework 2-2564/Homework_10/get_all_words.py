@@ -7,13 +7,12 @@ def get_all_words(board):
             if write == False: check.append("")
             write = board[i][j] != ''
             if write: check[-1] += board[i][j]
-            
-    for j in range(15):
+                
         write = False
-        for i in range(15):
+        for j in range(15):
             if write == False: check.append("")
-            write = board[i][j] != ''
-            if write: check[-1] += board[i][j]
+            write = (board[j][i] != '')
+            if write: check[-1] += board[j][i]
             
     for c in sorted(check):
         if len(c) > 1:
