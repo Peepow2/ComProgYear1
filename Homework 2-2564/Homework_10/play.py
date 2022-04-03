@@ -1,3 +1,4 @@
+def play(row,col,down,tiles,board):
     V, New_board = place_tiles(row, col, down, tiles, board)
     words1 = get_all_words(board)
     words2 = get_all_words(New_board)  
