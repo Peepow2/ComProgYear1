@@ -1,19 +1,16 @@
 def get_all_words(board):
     words = [[], []]
-    check = list()
+    W = ""
     for i in range(15):
-        write = False
+        W += ' '
         for j in range(15):
-            if write == False: check.append("")
-            write = board[i][j] != ''
-            if write: check[-1] += board[i][j]
-                
-        write = False
+            if board[i][j] != '': W += board[i][j]
+            else: W += ' '
+        W += ' '
         for j in range(15):
-            if write == False: check.append("")
-            write = (board[j][i] != '')
-            if write: check[-1] += board[j][i]
-            
-    for c in sorted(check):
+            if board[j][i] != '': W += board[j][i]
+            else: W += ' '
+    
+    for c in sorted(W.split()):
         if len(c) > 1: words[(is_valid(c) + 1) % 2].append(c)
     return words
