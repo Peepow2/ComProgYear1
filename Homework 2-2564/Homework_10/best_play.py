@@ -5,6 +5,5 @@ def best_play(tiles,board):
         for d in range(2):
           All_play.append([play(i, j, d, tiles, board), i, j, d])
     All_play.sort()
-    for i in All_play:
-      if i[0] == All_play[-1][0]: return i
-    return [-1, -1, -1, -1]
+    for l in All_play:
+      if l[0] == All_play[-1][0]: return l
