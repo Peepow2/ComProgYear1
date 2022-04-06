@@ -1,3 +1,9 @@
+""" Python Language
+ # Task: Homework10 Scrabble
+ # Code: Peerawich Sodsuay
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 def get_all_words_with_postion(board):
     words = [[], []]
     pos = list()
