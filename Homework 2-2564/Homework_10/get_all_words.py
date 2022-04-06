@@ -3,12 +3,13 @@ def get_all_words(board):
     W = ""
     for i in range(15):
         for j in range(15):
-            if board[i][j] != '': W += board[i][j]
-            else: W += ' '
+            if board[i][j] == '': W += ' '
+            else: W += board[i][j]
         W += ' '
+        
         for j in range(15):
-            if board[j][i] != '': W += board[j][i]
-            else: W += ' '
+            if board[j][i] == '': W += ' '
+            else: W += board[j][i]
         W += ' '
     
     for c in sorted(W.split()):
