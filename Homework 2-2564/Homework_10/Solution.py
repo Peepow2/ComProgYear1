@@ -1,5 +1,3 @@
-# Function 1: get_all_words
-# Return SORTED lists of CAPITALIZED words as [valid_words,invalid_words] of every words in the board, DUPLICATES are acceptable 
 def get_all_words_with_postion(board):
     words = [[], []]
     pos = list()
@@ -24,6 +22,8 @@ def get_all_words_with_postion(board):
                 pos.append([j, i])
     return words
 # ------------------------------------------------------------------------
+# Function 1: get_all_words
+# Return SORTED lists of CAPITALIZED words as [valid_words,invalid_words] of every words in the board, DUPLICATES are acceptable 
 def get_all_words(board):
     words = [[], []]
     W = ""
