@@ -1,3 +1,6 @@
+def empty(D):      return D == {}
+def No_None(A, B): return A != None and B != None
+
 def convert_to_dict(data,column_name):
     out = list()
     for i in range(len(data)):
