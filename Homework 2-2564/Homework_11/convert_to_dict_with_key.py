@@ -9,8 +9,6 @@ def convert_to_dict_with_key(data,column_name,key):
             KEY, VAL = column_name[j], data[i][j]
             if key == KEY: K = data[i][j]
             else:
-                if No_None(KEY, VAL):
-                    D[KEY] = VAL
-                
+                if No_None(KEY, VAL): D[KEY] = VAL         
         if K != None and OUT.get(K) == None and not empty(D): OUT[K] = D
     return OUT
