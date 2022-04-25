@@ -19,6 +19,7 @@ def rotate_left(shape):
 def animate_drop(board, shape, c):
     W, L = shape.shape
     OUT = list()
+    if c < 0 or c > (board.shape[1] - shape.shape[1]): return []
     for i in range(len(board) - W + 1):
         new_board = np.array(board)
         new_board[i:i + W, c:c + L] += shape
@@ -33,8 +34,7 @@ def animate_clear(board):
     pos = np.arange(len(board))
     
     OUT = list()
-    OUT.append(np.array(new_board))
-    
+    OUT.append(np.array(new_board))   
     while True:
         idx = np.sum(new_board, axis = 1) == 0
         if np.sum(idx) == 0: return []
