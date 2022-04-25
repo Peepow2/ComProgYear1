@@ -11,10 +11,10 @@ def get_time_cap(board, time_caps):
     return time_caps[ceil(n, (len(board) // len(time_caps))) - 1]
 
 def rotate_right(shape):
-    return shape.T[::, ::-1]
+    return np.array(shape.T[::, ::-1])
 
 def rotate_left(shape):
-    return shape.T[::-1, ::]
+    return np.array(shape.T[::-1, ::])
 
 def animate_drop(board, shape, c):
     W, L = shape.shape
