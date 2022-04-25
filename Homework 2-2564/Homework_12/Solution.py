@@ -47,4 +47,4 @@ def animate_clear(board):
         if np.sum(np.sum(new_board[-nr:], axis = 1) != 0) == nr: break
     return OUT
 
-def ceil(a, b): return (a // b) + (a % b)
+def ceil(a, b): return -(-a // b)
