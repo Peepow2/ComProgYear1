@@ -24,7 +24,7 @@ def animate_drop(board, shape, c):
         new_board = np.array(board)
         new_board[i:i + W, c:c + L] += shape
         if np.sum(board != 0) + np.sum(shape != 0) != np.sum(new_board != 0): break
-        OUT.append(new_board)
+        OUT.append(np.array(new_board))
     return OUT
 
 def animate_clear(board):
