@@ -15,16 +15,19 @@ def rotate_right(shape):
 
 def rotate_left(shape):
     return np.array(shape.T[::-1, ::])
-
+    
 def animate_drop(board, shape, c):
     W, L = shape.shape
-    OUT = list()
-    if c < 0 or c > (board.shape[1] - shape.shape[1]): return []
-    for i in range(len(board) - W + 1):
+    OUT = list()       
+    for i in range(-len(shape), len(board) - W + 1):
         new_board = np.array(board)
-        new_board[i:i + W, c:c + L] += shape
-        if np.sum(board != 0) + np.sum(shape != 0) != np.sum(new_board != 0): break
-        OUT.append(np.array(new_board))
+        if i < 0:
+            new_board[0:-i, c:c + L] += shape[i:]
+            if not can_replace(new_board, shape[i:]): return []   
+        else:
+            new_board[i:i + W, c:c + L] += shape
+            if not can_replace(new_board, shape): break
+            OUT.append(new_board)
     return OUT
 
 def animate_clear(board):
@@ -48,3 +51,4 @@ def animate_clear(board):
     return OUT
 
 def ceil(a, b): return -(-a // b)
+def can_replace(board, shape): return np.sum(board != 0) + np.sum(shape != 0) == np.sum(new_board != 0)
