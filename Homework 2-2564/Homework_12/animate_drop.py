@@ -1,8 +1,7 @@
 import numpy as np
 def animate_drop(board, shape, c):
     W, L = shape.shape
-    OUT = list()
-        
+    OUT = list()       
     for i in range(-len(shape), len(board) - W + 1):
         new_board = np.array(board)
         if i < 0:
