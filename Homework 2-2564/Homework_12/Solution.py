@@ -1,5 +1,10 @@
+""" Python Language
+ # Task: Homework12 Tetris
+ # Code: Peerawich Sodsuay 
+ # Warning: Don't copy this code to submit.
+ # If you do it, your score will be cancel immediately.
+"""
 import numpy as np
-
 def get_score(board):
     return np.sum(np.sum(board == 0, axis = 1) == 0) * 40
 
