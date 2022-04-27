@@ -1,5 +1,4 @@
 import numpy as np
-
 def can_replace(board, shape): 
     return np.sum(board != 0) + np.sum(shape != 0) == np.sum(new_board != 0)
     
