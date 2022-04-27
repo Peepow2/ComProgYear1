@@ -33,7 +33,7 @@ def animate_drop(board, shape, c):
         else:
             new_board[i:i + W, c:c + L] += shape
             if not can_replace(new_board, shape): break
-            OUT.append(new_board)
+            OUT.append(np.array(new_board))
     return OUT
 
 def animate_clear(board):
