@@ -3,7 +3,7 @@ def f1(v):
     return np.sum(v != np.arange(len(v))) == 0
 
 def f2(u, v):
-    return np.array(u) + np.array(v[::-1])
+    return u + v[::-1]
 
 def f3(M, v):
     return M * v
