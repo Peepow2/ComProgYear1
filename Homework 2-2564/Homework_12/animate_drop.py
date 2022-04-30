@@ -1,5 +1,4 @@
 import numpy as np
-    
 def animate_drop(board, shape, c):
     W, L = shape.shape
     OUT = list()       
