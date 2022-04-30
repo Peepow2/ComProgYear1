@@ -23,7 +23,6 @@ def rotate_left(shape):
     return np.array(shape.T[::-1, ::])
 
 def animate_drop(board, shape, c):
-    Zero = np.sum(board != 0) + np.sum(shape != 0)
     W, L = shape.shape
     OUT = list()
     for i in range(-shape.shape[0], len(board) - W + 1):
@@ -33,7 +32,7 @@ def animate_drop(board, shape, c):
           if np.sum(new_board != 0) != np.sum(board != 0) + np.sum(shape[i:] != 0): return []
         else:
           new_board[i:i+W, c:c+L] += shape
-          if np.sum(new_board != 0) != Zero: break
+          if np.sum(new_board != 0) != np.sum(board != 0) + np.sum(shape != 0): break
           OUT.append(np.array(new_board))
     return OUT
 
