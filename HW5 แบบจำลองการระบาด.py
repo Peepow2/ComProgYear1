@@ -18,7 +18,7 @@ def get_all_unjabbed_pairs(population, radius):
         y2 = unjabbed[itr2][1]
 
         if (((y1 - y2)**2) + (x1 - x2)**2) <= radius**2 and (itr1 < itr2): 
-          OUT.append(tuple((itr1, itr2))
+          OUT.append(tuple((itr1, itr2)))
     return sorted(OUT)
 # --------------------------------------------------------- #   
 def first_hop(population, id, radius): 
