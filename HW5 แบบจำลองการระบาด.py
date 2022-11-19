@@ -58,3 +58,11 @@ def get_infectable_ids(pairs,seed):
             visited[v] = True
       return OUT
 # --------------------------------------------------------- #     
+def get_all_clusters(pairs):
+    graph = get_adjacency_set(pairs)
+    OUT = list()
+    for u in graph:
+       t = get_infectable_ids(pairs, u)
+       if t not in OUT:
+         OUT.append(t)
+    return OUT
