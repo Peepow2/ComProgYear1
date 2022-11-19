@@ -42,3 +42,19 @@ def get_adjacency_set(pairs):
       OUT[b].add(a)
     return OUT      
 # --------------------------------------------------------- #                   
+def get_infectable_ids(pairs,seed):
+      graph = get_adjacency_set(pairs)
+      visited = dict()
+      for u in graph: visited[u] = False
+      OUT = set()
+      Q = [seed]
+      while len(Q) != 0:
+        u = Q[0]
+        Q.pop(0)
+        for v in graph[u]:
+          if visited[v] == False:
+            OUT.add(v)
+            Q.append(v)
+            visited[v] = True
+      return OUT
+# --------------------------------------------------------- #     
