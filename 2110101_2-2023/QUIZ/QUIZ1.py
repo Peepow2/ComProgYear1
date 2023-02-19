@@ -14,7 +14,7 @@ def str_mod(s ,n):
 def main():
     s = input()
     if s[-2] == '1':
-        print((s, int(s[-1])))
+        print(rotate_left(s, int(s[-1])))
     elif s[-2] == '2':
         print(rotate_right(s, int(s[-1])))
     elif s[-2] == '3':
