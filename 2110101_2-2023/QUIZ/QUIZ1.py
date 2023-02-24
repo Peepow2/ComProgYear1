@@ -41,7 +41,7 @@ for i in range(1, 8):
         print(str(i) + "..|........+")
 print("-------------")
 
-# QUIZ1_3 Flowchart โจทย์ยาวจำไม่ได้
+# QUIZ1_3 Flowchart
 a,b,c,d = [int(e) for e in input().split()]
 if d > a:
     n = 0
