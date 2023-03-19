@@ -23,11 +23,15 @@ while M > 0:
 for i in range(len(MAXN)):
     print(MAXN[i][0], MAXN[i][1])
 # -------------------------------------------------------- #
-# Quiz_2_2 Matching Rule (No 100)
+# Quiz_2_2 Matching Rule
 def match(s, cs):
     # ? check
-    # ???
-        
+    if "(" not in cs and "[" not in cs:
+        if len(s) != len(cs): return False
+        for i in range(len(cs)):
+            if (s[i] != cs[i]) and cs[i] != '?':
+                return False
+            
     # () [] check
     word = list()
     B = False
@@ -39,7 +43,8 @@ def match(s, cs):
             B = True
         elif cs[i] in '])':
             B = False
-        
+   
+    if len(word) != len(s): return False
     for i in range(len(word)):
         if '[' in word[i] and ']' in word[i]:
             if s[i] not in word[i]: return False
@@ -47,8 +52,9 @@ def match(s, cs):
             if s[i] in word[i]: return False      
     return True
 
-# ห้ามลบหรือแก้ไขบรรทัดด้านล่างนี5
+# ห้ามลบหรือแก้ไขบรรทัดด้านล่างนี้
 exec(input().strip())
+
 # -------------------------------------------------------- #
 # Quiz_2_3 Complex Replace
 def complex_replace(s,k_strs,r_strs):
