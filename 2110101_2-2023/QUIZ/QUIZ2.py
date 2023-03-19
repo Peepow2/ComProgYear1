@@ -54,7 +54,6 @@ def match(s, cs):
 
 # ห้ามลบหรือแก้ไขบรรทัดด้านล่างนี้
 exec(input().strip())
-
 # -------------------------------------------------------- #
 # Quiz_2_3 Complex Replace
 def complex_replace(s,k_strs,r_strs):
