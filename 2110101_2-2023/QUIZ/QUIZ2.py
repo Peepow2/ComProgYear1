@@ -24,18 +24,20 @@ for i in range(len(MAXN)):
     print(MAXN[i][0], MAXN[i][1])
 # -------------------------------------------------------- #
 # Quiz_2_2 Matching Rule
-def match(s, cs):       
+def match(s, cs):    
+    # a[bc]d(efg) --> ['a', '[bc]', 'd', '(efg)']
     word = list()
-    B = False
-    for i in range(len(cs)):  # a[bc]d(efg) --> ['a', '[bc]', 'd', '(efg)']
-        if B: word[-1] += cs[i]
-        else: word.append(cs[i])
-        
-        if cs[i] in '[(':
-            B = True
-        elif cs[i] in '])':
-            B = False
-
+    i = j = 0
+    while i < len(cs) and i != -1:
+        if cs[i] == '[':
+            j = cs.find(']', i)        
+        elif cs[i] == '(':
+            j = cs.find(')', i)
+        else:
+            j = i
+        word.append(cs[i:j+1])
+        i = j + 1
+    
     if len(word) != len(s): return False
     for i in range(len(word)):
         if '[' in word[i] and ']' in word[i]:
