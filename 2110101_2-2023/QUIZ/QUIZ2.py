@@ -52,17 +52,18 @@ exec(input().strip())
 # -------------------------------------------------------- #
 # Quiz_2_3 Complex Replace
 def complex_replace(s,k_strs,r_strs):
-    L = list()
+    minN = len(s) + 10
+    word = ''
+    Found = True
     for i in range(len(k_strs)):
-        if s.find(k_strs[i]) != -1:
-            L.append(s.find(k_strs[i]))
-        else:
-            L.append(9999999999) # set to infinity
-    
-    if len(L) != 0 and L.count(9999999999) != len(L):
-        Min = min(L)
-        idx = L.index(Min)
-        return s[:Min] + '<' + r_strs[idx] + '>' + s[Min+len(k_strs[idx]):]
+        idx = s.find(k_strs[i])
+        if idx != -1 and idx < minN:
+            minN = idx
+            word = r_strs[i]
+            Found = True
+        
+    if Found:
+        return s[:minN] + '<' + word + '>' + s[minN + len(word):]
     return s
 
 exec(input().strip())
