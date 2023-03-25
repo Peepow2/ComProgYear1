@@ -30,7 +30,10 @@ def get_stu_points(grader_points):
     return sorted(student)
 
 def get_stu_section_points(stu_points, sid_sections):
-    return sorted([[get_section(sid_sections, S[0])] + S[::-1] for S in stu_points])
+    GSSP = list()
+    for S in stu_points:
+        GSSP.append([get_section(sid_sections, S[0])] + S[::-1])
+    return sorted(GSSP)
 
 def get_section_point_count(stu_section_points, min_point):
     L = list()
