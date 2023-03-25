@@ -22,7 +22,7 @@ def cal_defect_box_ratio(textfile):
 
     if '+' in scan_data:
         Defect_X, Defect_Y, Defect_Z = list(), list(), list()
-        for i in range(len(scan_data)):
+        for i in range(1, len(scan_data)):
             if scan_data[i] == '+':
                 Defect_X.append(i % WDH + 1)
                 Defect_Y.append(i // (WDH**2) + 1)
