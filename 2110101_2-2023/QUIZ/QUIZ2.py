@@ -12,14 +12,14 @@ for i in range(len(Q)):
     MAXN.append([Q[i][0], 0])
 
 while M > 0:
+    change = False
     for i in range(len(Q)):
-        if M - 1 >= 0 and MAXN[i][1] < Q[i][1]:
+        if M > 0 and MAXN[i][1] < Q[i][1]:
             MAXN[i][1] += 1
             M -= 1
-            
-    for i in range(len(Q)):
-        if MAXN[i][1] < Q[i][1]: continue
-            
+            change = True
+    if not change: break
+    
 for i in range(len(MAXN)):
     print(MAXN[i][0], MAXN[i][1])
 # -------------------------------------------------------- #
