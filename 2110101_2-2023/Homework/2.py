@@ -1,18 +1,33 @@
 # Riemann sum functions
-#-----------------------------
+# ---------------------------- #
 def riemann_left(f, a, b, n):
-    return sum([(f(a + (i * ((b - a) / n))) * ((b - a) / n)) for i in range(n)])
+    dx = (b - a) / n
+    S = 0
+    for i in range(n):
+        S += f(a + (i*dx))
+    return S * dx
 
 def riemann_right(f, a, b, n):
-    return sum([(f(a + (i * ((b - a) / n))) * ((b - a) / n)) for i in range(1, n+1)])
+    dx = (b - a) / n
+    S = 0
+    for i in range(1, n+1):
+        S += f(a + (i*dx))
+    return S * dx
 
 def riemann_mid(f, a, b, n):
-    return sum([(f(a + ((i + 0.5) * ((b - a) / n))) * ((b - a) / n)) for i in range(n)])
+    dx = (b - a) / n
+    S = 0
+    for i in range(1, 2*n, 2):
+        S += f(a + (i*dx)/2)
+    return S * dx
 
 def riemann_trap(f, a, b, n):
-    return sum([(0.5 * ((b - a) / n)) * (f(a + (i * ((b - a) / n))) + f(a + ((i + 1) * ((b - a) / n)))) for i in range(n)])
-
-#----------------------------
+    dx = (b - a) / n
+    S = 0
+    for i in range(1, n):
+        S += 2 * f(a + (i*dx))
+    return 0.5 * (S + f(a) + f(b)) * dx
+# ---------------------------- #
 def estimate(riemann_sum_function, f, a, b, precision):
     k = 1
     r2 = round(riemann_sum_function(f, a, b, k), precision)
