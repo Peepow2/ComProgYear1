@@ -17,8 +17,8 @@ def get_stu_points(grader_points):
     for s in grader_points:
         NTS = s.split(',')
         if NTS[0] not in ADD_Index:
-            ADD_Index += [NTS[0]]
-            student += [[NTS[0], [0]]]
+            ADD_Index.append(NTS[0])
+            student.append([NTS[0], [0]])
             
     for s in grader_points:
         NTS = s.split(',')
