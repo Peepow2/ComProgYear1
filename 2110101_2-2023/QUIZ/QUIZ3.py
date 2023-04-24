@@ -31,16 +31,17 @@ for r in ['AAA','AA','A','BBB','BB','B','CCC','CC','C','D','None']:
 # Quiz_3_2 Seating Map
 def print_seats(assignments, n_rows, n_cols):
     SEAT = list()
+    form = ('-- ' * n_cols).split() # Form of seat in one row
     for i in range(n_rows):
-        SEAT.append(('-- ' * n_cols).split())
+        SEAT.append(list(form))
     
     for s in assignments:
-        c = int(s[1] - 1) % n_cols,
+        c = int(s[1] - 1) % n_cols
         r = int(s[1] - 1) // n_cols
         SEAT[r][c] = s[0]
     
-    for l in SEAT:
-        print('| ' + ' | '.join(l) + ' |')
+    for line in SEAT:
+        print('| ' + ' | '.join(line) + ' |')
     
 exec(input().strip()) # DO NOT remove this line
 # --------------------------------------------------------------------------------- #
