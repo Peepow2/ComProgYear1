@@ -13,7 +13,7 @@ x = input().split()
 while x[0] != 'END':
     r = 'None'
     for c in Company: # Find Rating
-        if x[0][0:len(c)] == c:
+        if x[0][0:len(c)] == c: 
             r = Rating[c]
             break
         
