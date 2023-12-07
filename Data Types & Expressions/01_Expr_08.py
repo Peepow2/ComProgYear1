@@ -1,3 +1,6 @@
+def sqrt_n_times(x, n):
+    return x ** ((1/2) ** n) 
+    
 def cube_root(y):
     a = sqrt_n_times(y, 2)
     b = a * sqrt_n_times(a, 2)
